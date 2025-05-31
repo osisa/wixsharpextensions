@@ -56,12 +56,12 @@ namespace NineDigit.WixSharpExtensions.Localization
 
                 localization.BindTo(project);
 
-                var localizedMsiFilePath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(msiFilePath), localization.Language + ".msi");
+                var localizedMsiFilePath = System.IO.Path.Combine(System.IO.Path.GetDirectoryName(msiFilePath)!, localization.Language + ".msi");
                 project.BuildMsi(localizedMsiFilePath);
 
                 var localizedMstFilePath = localizedMsiFilePath.PathChangeExtension(".mst");
 
-                Process.Start(torchCmd, $"-p -t language \"{msiFilePath}\" \"{localizedMsiFilePath}\" -out \"{localizedMstFilePath}\"")
+                Process.Start(torchCmd, $"-p -t language \"{msiFilePath}\" \"{localizedMsiFilePath}\" -out \"{localizedMstFilePath}\"")!
                     .WaitForExit();
 
                 // note: file name must be in format "{language}.msi" due to internal wixSharp implementation
