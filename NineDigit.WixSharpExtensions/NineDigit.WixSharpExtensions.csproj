@@ -28,9 +28,7 @@
   </PropertyGroup>
   <ItemGroup>
     <None Remove="NineDigit.WixSharpExtensions.xml" />
-    <!--<None Remove="C:\wixsharpextensions\wixsharpextensions\README.md" />-->
-    <!--<Content Remove="C:\wixsharpextensions\wixsharpextensions\README.md" />-->
-	<Content Include="$(SolutionDir)README.md" Pack="true" PackagePath="\">
+    <Content Include="$(SolutionDir)README.md" Pack="true" PackagePath="\">
 	  <CopyToOutputDirectory>Always</CopyToOutputDirectory>
 	</Content>
   </ItemGroup>
