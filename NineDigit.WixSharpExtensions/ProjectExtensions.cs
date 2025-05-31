@@ -123,7 +123,7 @@ namespace NineDigit.WixSharpExtensions
             project.GUID = upgradeCode;
             projectName.BindTo(project);
             project.UpgradeCode = upgradeCode;
-            project.InstallScope = installScope;
+            project.Scope = installScope;
             project.Version = version;
 
             return project;
